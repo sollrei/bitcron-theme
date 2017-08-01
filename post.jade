@@ -1,0 +1,19 @@
+extends base.jade
+
+block content
+    .content
+        .post.wrapper
+            .post_title: h2= post.title
+            .post_content.markdown= post.content
+            .post_footer
+                if post.tags: .tags: for tag in post.tags
+                    a.btn(role="tags",href="/tags/{{ tag }}")= tag
+
+                .info
+                    i.fa.fa-clock-o
+                    span.date= post.date("%Y-%m-%d")
+
+                    i.fa.fa-comment-o
+                    a(href="{{post.url}}#comments")=  '%s Comments' % (post.comments_count or 0)
+
+            +post.comments_as_html()

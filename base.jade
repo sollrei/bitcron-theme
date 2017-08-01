@@ -1,0 +1,66 @@
+html
+    +h.i18n('Home', '首页', 'zh_cn')
+    +h.i18n('Categories', '分类', 'zh_cn')
+    +h.i18n('Archive', '归档', 'zh_cn')
+    +h.i18n('Tags', '标签', 'zh_cn')
+    +h.i18n('About', '关于', 'zh_cn')
+    +h.i18n('Links', '友链', 'zh_cn')
+	link(href='https://fonts.googleapis.com/css?family=Josefin+Sans|Julius+Sans+One|Lato',rel='stylesheet')
+    head
+        +h.headers
+
+        block title
+            title= post.title or site.title
+
+
+
+        +h.load('markdown')
+        +h.load('/template/style.scss')
+
+    body
+		nav.m-nav: .layout
+			+site.just_nav
+		
+		header.m-header: .layout
+			h1.site-title.animated.fadeInDown
+				a(href="/") {{ site.title }}
+			 if site.raw_content
+                        .description.animated.fadeInDown
+                            p= '♥ %s ♥' % site.raw_content[:100]
+			.nav.ft-center
+				for category in  posts.categories
+					a(href=category.url)= category.title
+					span /
+			
+		div.m-main.layout
+			+pure
+				+pure(1, 1, 1, 0.708)
+					block content
+				+pure(1, 1, 1, 0.291)
+					aside.m-sidebar
+            			.sidebar-wrap
+							.side-box
+								h3.side-title search
+								.side-content
+									form.search-form(action='')
+										input(type='search', name='s')
+										button(type='submit') 
+											i.fa.fa-search
+							.side-box
+								h3.side-title follow
+								.side-content
+									+site.socials
+							.side-box
+								h3.side-title tag cloud
+								div.side-content
+									for tag_name, tag_count in site.tags
+										a.side__a.tag-item(role="tags",href="/tags/{{ tag_name }}")= tag_name
+							
+								
+
+        .footer
+            +footer()
+                p: a(href="https://www.sollrei.me") @sollrei
+                p: a(href="https://bitcron.com/?s=f", target="_blank") Proudly published with Bitcron！
+
+        +h.load('font')
