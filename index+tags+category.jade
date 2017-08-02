@@ -48,11 +48,10 @@ block content
                                         img.avatar(src=site.avatar)
                                     .back
                                         p 你好地球人
-                            p.mt-10
+                            p.user-name.mt-10
                                 i.fa.fa-user
                                 span sollrei
 					.side-box
-						h3.side-title follow
 						.side-content
 							+site.socials
 							.my_socials: a(href='//pixiv.me/sollrei')
@@ -65,7 +64,7 @@ block content
                                 button(type='submit')
                                     i.fa.fa-search
 					.side-box
-						h3.side-title tag cloud
+						h3.side-title tags
 						div.side-content
 							for tag_name, tag_count in site.tags
 								a.side__a.tag-item(role="tags",href="/tags/{{ tag_name }}")= tag_name

@@ -42,18 +42,7 @@ ul, li {
 
 a {
     text-decoration: none;
-
-    &:link, &:visited {
-        opacity: 1;
-        -webkit-transition: all .15s linear;
-        -moz-transition: all .15s linear;
-        -o-transition: all .15s linear;
-        -ms-transition: all .15s linear;
-        transition: all .15s linear;
-        color: $gray;
-
-    }
-
+	color: $gray;
     &:hover, &:active {
         color: $color;
     }
@@ -253,11 +242,10 @@ a {
             display: inline-block;
             height: $h;
             width: $h;
-            margin-right: 5px;
+            margin: 0 3px 5px;
             line-height: $h;
             border-radius: 2px;
             text-align: center;
-            font-size: 18px;
             color: $gray;
             background: #fff;
             &:hover {
@@ -372,13 +360,16 @@ a {
     }
 }
 
-@media screen and(max-width: 780px) {
+@media screen and (max-width: 780px) {
   	.post {
 		.post_title {
 	  		h2 {
 	  			font-size: 22px;
 	  		}
 		}
+	  	.post_cover {
+	  		height: 300px;
+	  	}
   	}
 }
 
