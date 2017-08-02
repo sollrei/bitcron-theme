@@ -70,6 +70,12 @@ a {
     padding: 0 30px;
 }
 
+@media screen and (max-width: 780px) {
+  	.layout {
+  		padding: 0 10px;
+  	}
+} 
+
 .ft-center {
     text-align: center;
 }
@@ -139,7 +145,10 @@ a {
 
 @media screen and (max-width: 1024px) {
     .m-header {
-        padding: 60px 0;
+        padding: 50px 0;
+	  	.site-title {
+	  		font-size: 34px;
+	  	}
     }
 }
 
@@ -199,15 +208,16 @@ a {
         font-family: Josefin Sans, sans-serif;
     }
     .side-content {
-        p {
-            font-size: 12px;
-        }
+        font-size: 12px;
     }
     .avatar {
         height: 100px;
         width: 100px;
         border-radius: 50%;
     }
+  	.my_socials {
+  		display: inline;
+  	}
     .search-form {
         margin: 0 20px;
         position: relative;
@@ -286,6 +296,12 @@ a {
     padding: 0 20px;
 }
 
+@media screen and (max-width: 780px) {
+  	.content {
+  		padding: 0 10px;
+  	}
+}
+
 .wrapper .doc_comments {
     margin: 0;
     padding: 0;
@@ -354,6 +370,16 @@ a {
             margin-right: 3px;
         }
     }
+}
+
+@media screen and(max-width: 780px) {
+  	.post {
+		.post_title {
+	  		h2 {
+	  			font-size: 22px;
+	  		}
+		}
+  	}
 }
 
 .paginator {
