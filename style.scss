@@ -51,7 +51,7 @@ a {
         -o-transition: all .15s linear;
         -ms-transition: all .15s linear;
         transition: all .15s linear;
-        color: #424242;
+        color: $gray;
 
     }
 
@@ -101,7 +101,7 @@ a {
     .site-title {
         position: relative;
         display: inline-block;
-	  	margin: 37px 0;
+        margin: 37px 0;
         font-size: 56px;
         line-height: 1.2;
         &:before {
@@ -141,8 +141,8 @@ a {
 
 /* side */
 .m-sidebar {
-  	$h: 35px;
-  	padding: 0 20px;
+    $h: 35px;
+    padding: 0 20px;
     .side-box {
         margin-bottom: 30px;
     }
@@ -193,7 +193,7 @@ a {
             text-align: center;
             font-size: 18px;
             color: $gray;
-		  	background: #fff;
+            background: #fff;
             &:hover {
                 border-color: $color;
                 color: $color;
@@ -211,7 +211,7 @@ a {
         // border: $border;
         color: $gray;
         border-radius: 2px;
-	  	background: #fff;
+        background: #fff;
         &:hover {
             color: $color;
             border-color: $color;
@@ -241,12 +241,12 @@ a {
 }
 
 .post_detail {
-	margin: 0 auto;
-  	max-width: 960px;
-  	.wrapper {
-  		padding-left: 50px;
-		padding-right: 50px;
-  }
+    margin: 0 auto;
+    max-width: 960px;
+    .wrapper {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
 
 .post {
@@ -265,17 +265,17 @@ a {
     .post_cover {
         height: 400px;
         overflow: hidden;
-	  	margin: -40px -30px 20px;
-	  	background-repeat: no-repeat;
-	    background-size: cover;
-	    background-position: center center;
+        margin: -40px -30px 20px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
         img {
             max-width: 100%;
         }
     }
 
     .post_content {
-	    padding-bottom: 20px;
+        padding-bottom: 20px;
         a {
             color: $color;
         }
