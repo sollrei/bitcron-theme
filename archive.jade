@@ -1,7 +1,7 @@
 extends base.jade
 
 block content
-	.content: .wrapper.list_with_title
+	.content.narrow-content: .wrapper.list_with_title
 		entries = get_data(type='post',limit=300, sort='desc').group('-date:year')
 		for year, posts in entries
 			div.listing_title= year

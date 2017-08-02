@@ -19,7 +19,6 @@ mixin make_post(post)
                     i.fa.fa-tag
                     for tag in post.tags
                         a(role="tags",href="/tags/{{ tag }}")= tag
-
             .info
                 i.fa.fa-clock-o
                 span.date= post.date("%Y-%m-%d")
@@ -40,17 +39,29 @@ block content
 		+pure(1, 1, 1, 0.291)
 			aside.m-sidebar
 				.sidebar-wrap
-					.side-box
-						h3.side-title search
-						.side-content
-							form.search-form(action='')
-								input(type='search', name='s')
-								button(type='submit') 
-									i.fa.fa-search
+                    .side-box
+                        h3.side-title about me
+                        .side-content
+                            if site.avatar
+                                .flip-container: .flipper
+                                    .front
+                                        img.avatar(src=site.avatar)
+                                    .back
+                                        p 你好地球人
+                            p.mt-10
+                                i.fa.fa-user
+                                span sollrei
 					.side-box
 						h3.side-title follow
 						.side-content
 							+site.socials
+                    .side-box
+                        h3.side-title search
+                        .side-content
+                            form.search-form(action='')
+                                input(type='search', name='s')
+                                button(type='submit')
+                                    i.fa.fa-search
 					.side-box
 						h3.side-title tag cloud
 						div.side-content
