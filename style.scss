@@ -31,7 +31,6 @@ html {
 }
 
 body {
-    color: rgba(0, 0, 0, 0.6);
     font: 14px/1.8 'Droid Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     width: 100%;
     background-color: #fafbfc;
@@ -108,6 +107,7 @@ a {
         margin: 37px 0;
         font-size: 56px;
         line-height: 1.2;
+	    font-weight: 400;
         &:before {
             content: '';
             position: absolute;
@@ -245,15 +245,14 @@ a {
             width: $h;
             margin-right: 5px;
             line-height: $h;
-            // border: $border;
             border-radius: 2px;
             text-align: center;
             font-size: 18px;
             color: $gray;
             background: #fff;
             &:hover {
-                border-color: $color;
-                color: $color;
+                background-color: $color;
+                color: #fff;
             }
         }
     }
@@ -265,13 +264,12 @@ a {
     }
     .side__a {
         display: inline-block;
-        // border: $border;
         color: $gray;
         border-radius: 2px;
         background: #fff;
         &:hover {
-            color: $color;
-            border-color: $color;
+            color: #fff;
+            background-color: $color;
         }
     }
 }
@@ -314,7 +312,7 @@ a {
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 30px;
-            font-weight: 600;
+            font-weight: 400;
             padding-bottom: 10px;
         }
     }
@@ -368,7 +366,7 @@ a {
         border-radius: 2px;
     }
     .page_number {
-        padding: 5px 10px;
+        padding: 6px 10px;
         display: inline-block;
     }
     .pre {
