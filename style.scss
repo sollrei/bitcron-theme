@@ -96,10 +96,26 @@ a {
 /* header */
 .m-header {
     padding: 60px 0 80px;
+    text-align: center;
     font-family: Josefin Sans, sans-serif;
     .site-title {
+        position: relative;
+        display: inline-block;
         font-size: 5em;
-        text-align: center;
+        line-height: 1.2;
+        &:before {
+            content: '';
+            position: absolute;
+            height: 41px;
+            width: 96px;
+            left: 50%;
+            margin-left: -48px;
+            bottom: -5px;
+            background: url(./leaf.png) no-repeat 0 0;
+            background-size: 96px 41px;
+            opacity: .7;
+        }
+
     }
     .nav {
         font-size: 18px;
@@ -384,6 +400,42 @@ a {
     -ms-animation-duration: 1s;
     -o-animation-duration: 1s;
     animation-duration: 1s;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotate {
+    0% {
+        -moz-transform: rotate(0);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rotate {
+    0% {
+        -o-transform: rotate(0);
+    }
+    100% {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @-webkit-keyframes fadeInDown {
