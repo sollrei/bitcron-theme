@@ -23,38 +23,15 @@ html
 		
 		header.m-header: .layout
 			h1.site-title.animated.fadeInDown
-				a(href="/") {{ site.title }}
-			 if site.raw_content
-                        .description.animated.fadeInDown
-                            p= '♥ %s ♥' % site.raw_content[:100]
+				a(href="/?status=loaded") {{ site.title }}
 			.nav.ft-center
 				for category in  posts.categories
 					a(href=category.url)= category.title
 					span /
 			
 		div.m-main.layout
-			+pure
-				+pure(1, 1, 1, 0.708)
-					block content
-				+pure(1, 1, 1, 0.291)
-					aside.m-sidebar
-            			.sidebar-wrap
-							.side-box
-								h3.side-title search
-								.side-content
-									form.search-form(action='')
-										input(type='search', name='s')
-										button(type='submit') 
-											i.fa.fa-search
-							.side-box
-								h3.side-title follow
-								.side-content
-									+site.socials
-							.side-box
-								h3.side-title tag cloud
-								div.side-content
-									for tag_name, tag_count in site.tags
-										a.side__a.tag-item(role="tags",href="/tags/{{ tag_name }}")= tag_name
+			block content
+			
 							
 								
 
