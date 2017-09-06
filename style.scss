@@ -24,7 +24,9 @@ $color: #a9c9c9;
 $light: #e2e3e4;
 $gray: #424344;
 $border: 1px solid #e2e3e4;
-
+$color-light: #eee;
+$color-content: #6f6f6f;
+$color-text: #333;
 html {
     background-color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -373,6 +375,65 @@ a {
   	}
 }
 
+
+.markdown {
+    line-height: 1.7;
+    font-size: 15px;
+    color: $color-content;
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 14px;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 16px;
+        line-height: 1.5;
+        font-weight: 700;
+        color: $color-text;
+    }
+    p {
+        margin-bottom: 16px;
+    }
+    a {
+        text-decoration: underline;
+        transition: color .2s;
+    }
+    ul {
+        padding-left: 40px;
+    }
+    ol {
+        padding-left: 40px;
+    }
+    hr {
+        height: 1px;
+        margin: 32px 0;
+        border: 0;
+        background-color: $color-light;
+    }
+    blockquote {
+        margin-bottom: 16px;
+        padding-left: 20px;
+        letter-spacing: .7px;
+        border-left: 3px solid lighten($color-text, 5%);
+        font-style: italic;
+    }
+}
+.markdown .md_block {
+	margin-bottom: 16px;
+}
 .paginator {
     padding: 15px 0;
     text-align: center;
