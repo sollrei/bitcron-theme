@@ -206,40 +206,43 @@ $h: 35px;
     padding: 0 20px;
 }
 
-.side-box {
-    margin-bottom: 40px;
-    .avatar {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-    }
-    .tag-item {
-        padding: 0 10px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        line-height: $h;
-        display: inline-block;
-        color: $gray;
-        border-radius: 2px;
-        background: #fff;
-        &:hover {
-            color: #fff;
-            background-color: $color;
+.side {
+    &-box {
+        margin-bottom: 40px;
+        .avatar {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        .tag-item {
+            padding: 0 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            line-height: $h;
+            display: inline-block;
+            color: $gray;
+            border-radius: 2px;
+            background: #fff;
+            &:hover {
+                color: #fff;
+                background-color: $color;
+            }
         }
     }
+    &-title {
+        padding: 10px 0;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    &-content {
+        padding: 20px 10px;
+        box-shadow: $shadow;
+        background: $color-white;
+        font-size: 12px;
+    }
 }
-.side-title {
-    padding: 10px 0;
-    font-size: 18px;
-    font-weight: 400;
-    text-transform: capitalize;
-}
-.side-content {
-    padding: 20px 10px;
-    box-shadow: $shadow;
-    background: $color-white;
-    font-size: 12px;
-}
+
 
 .search-form {
     margin: 0 20px;
