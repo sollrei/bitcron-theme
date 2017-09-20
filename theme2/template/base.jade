@@ -1,0 +1,40 @@
+html
+    +h.i18n('Home', '首页', 'zh_cn')
+    +h.i18n('Categories', '分类', 'zh_cn')
+    +h.i18n('Archive', '归档', 'zh_cn')
+    +h.i18n('Tags', '标签', 'zh_cn')
+    +h.i18n('About', '关于', 'zh_cn')
+    +h.i18n('Links', '友链', 'zh_cn')
+	link(href='https://fonts.googleapis.com/css?family=Josefin+Sans|Julius+Sans+One|Lato|Karla',rel='stylesheet')
+    head
+        +h.headers
+
+        block title
+            title= post.title or site.title
+			
+        +h.load('markdown')
+        +h.load('/template/style.scss')
+
+    body
+		nav.m-nav: .layout
+			+site.just_nav
+			+site.socials
+		
+		header.m-header: .layout
+			block head
+			.nav.ft-center
+				for category in  posts.categories
+					a(href=category.url)= category.title
+					span /
+			
+		
+		block content
+			
+        .footer
+            +footer()
+                p
+                    a(href="/") @sollrei
+                p
+                    a(href="https://bitcron.com/?s=f", target="_blank") Proudly published with Bitcron！
+
+        +h.load('font')
