@@ -1,9 +1,9 @@
 extends base.jade
 
 block content
-	.post-title-wrap
-		.post_title: h1.h1= post.title
-		.post_date: time= post.date("%B %d, %Y")
+	.post-head
+		.title: h1.h1= post.title
+		.date: time= post.date("%B %d, %Y")
     .content.narrow-content
         .post.wrapper
             .post_content.markdown= post.content

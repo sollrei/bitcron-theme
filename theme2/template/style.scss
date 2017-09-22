@@ -362,9 +362,6 @@ $h: 35px;
 
     &_content {
         padding-bottom: 20px;
-        a {
-            color: $color;
-        }
     }
     &_footer {
         font-size: 12px;
@@ -399,8 +396,11 @@ $h: 35px;
 
 .markdown {
     line-height: 1.7;
-    font-size: 15px;
-    color: $color-content;
+    font-size: 16px;
+    color: darken($color-content, 10%);
+        a {
+            color: darken($color,15%);
+        }
     h1 {
         font-size: 30px;
     }
@@ -449,7 +449,7 @@ $h: 35px;
         padding: 10px 40px;
         letter-spacing: .7px;
         border-left: 3px solid lighten($color-text, 5%);
-        background: #fafbfc;
+	    background: #fafbfc;
     }
 }
 
@@ -482,16 +482,27 @@ $h: 35px;
 
 /* --- footer --- */
 .footer {
+    margin-top: 40px;
     text-align: center;
     font-size: 12px;
-    padding-top: 60px;
-    padding-bottom: 20px;
-    .site_footer_wrap .site_footer {
-        border-top: none;
-        margin: 0;
+    background-size: cover;
+    background-position: center bottom;
+    .footer_wrap {
+	    padding: 100px 0 30px;
+	    background: rgba(#000, .75);
     }
+  .my_socials {
+	margin-bottom: 10px;
+	font-size: 16px;
+   a {
+    margin: 0 10px;
+  }
+  }
     a {
-        color: $gray;
+        color: $color-light;
+	  &:hover {
+	    color: $color-white;
+	  }
     }
 }
 
