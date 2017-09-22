@@ -247,7 +247,7 @@ $h: 35px;
 .search-form {
     margin: 0 20px;
     position: relative;
-    input {
+    .input {
         padding: 0 10px 0 30px;
         width: 100%;
         box-sizing: border-box;
@@ -445,11 +445,11 @@ $h: 35px;
         background-color: $color-light;
     }
     blockquote {
-        margin-bottom: 16px;
-        padding-left: 20px;
+        margin: 0 -50px 16px -50px;
+        padding: 10px 40px;
         letter-spacing: .7px;
         border-left: 3px solid lighten($color-text, 5%);
-        font-style: italic;
+        background: #fafbfc;
     }
 }
 
