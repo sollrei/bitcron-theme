@@ -65,7 +65,7 @@ h1,h2,h3,h4,h5,h6 {
 
 @media screen and (max-width: 780px) {
     .layout {
-        padding: 0 10px;
+        padding: 0;
     }
 }
 
@@ -86,6 +86,7 @@ h1,h2,h3,h4,h5,h6 {
 .m-nav {
     $h: 40px;
     height: $h;
+    padding: 0 10px;
     line-height: $h;
     font-size: 12px;
     background: $color-text;
@@ -153,7 +154,8 @@ h1,h2,h3,h4,h5,h6 {
 
 @media screen and (max-width: 1024px) {
     .m-header {
-        padding: 50px 0;
+	    margin-bottom: 20px;
+        padding: 20px 0;
         .site-title {
             font-size: 34px;
         }
@@ -284,13 +286,19 @@ $h: 35px;
     box-shadow: $shadow;
 }
 
+@media screen and (max-width: 780px) {
+    .wrapper {
+        padding: 30px 15px;
+    }
+}
+
 .content {
     padding: 0 20px;
 }
 
 @media screen and (max-width: 780px) {
     .content {
-        padding: 0 10px;
+        padding: 0;
     }
 }
 
@@ -311,6 +319,14 @@ $h: 35px;
         padding-right: 50px;
     }
 }
+
+@media screen and (max-width: 780px) {
+    .narrow-content .wrapper {
+        padding-left: 15px;
+	    padding-right: 15px;
+    }
+}
+
 /* --- post --- */
 .post-head {
     padding: 30px 20px 40px;
@@ -385,11 +401,13 @@ $h: 35px;
 
 @media screen and (max-width: 780px) {
     .post {
+	    margin-bottom: 15px;
         &_title {
             font-size: 22px;
         }
         &_cover {
             height: 300px;
+		    margin: -30px -15px 20px;
         }
     }
 }
@@ -434,9 +452,15 @@ $h: 35px;
     }
     ul {
         padding-left: 40px;
+	  li {
+	   list-style-type: disc;
+	  }
     }
     ol {
         padding-left: 40px;
+	  li {
+	  list-style-type: decimal;
+	  }
     }
     hr {
         height: 1px;
