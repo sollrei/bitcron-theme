@@ -1,0 +1,14 @@
+extends base.jade
+
+block content
+    article.post
+        .post_head
+            .title: h1.h1= post.title
+            .date: time= post.date("%B %d, %Y")
+        .post_content.markdown= post.content
+        .post_tags
+            if post.tags: .tags: for tag in post.tags
+                a.btn(role="tags",href="/tags/{{ tag }}")= tag
+        +post.comments_as_html()
+
+
