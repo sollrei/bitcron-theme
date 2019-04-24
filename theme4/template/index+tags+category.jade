@@ -1,0 +1,24 @@
+extends base.jade
+
+
+mixin make_post(post)
+    article.post
+        if post.metadata.cover
+            a(href=post.url)
+                .post_cover(style="background-image: url({{post.metadata.cover}})")
+        .post_title
+            h2
+                a(href=post.url)= post.title
+            .post_info
+                .info
+                    span.date= post.date("%b %d, %Y")
+                    if post.tags
+                        for tag in post.tags
+                            a(role="tags",href="/tags/{{ tag }}")= tag
+        .post_content.markdown= post.content.opening or post.content.plain.limit(100, keep_images=True)
+
+block content
+    .post-list
+        for post in posts
+            +make_post(post)
+        +h.paginator(show_page_of=true,pre_label='← Newer', next_label='Older →')

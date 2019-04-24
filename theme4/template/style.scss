@@ -1,0 +1,420 @@
+$shadow: 0 2px 5px rgba(#d3d5d7, .2);
+$color: #7da6b8;
+$light: #e2e3e4;
+$gray: #424344;
+$border: 1px solid #ededed;
+
+$color-content: #6f6f6f;
+$color-bg: #fafbfc;
+$color-white: #fff;
+
+$max-width: 800px;
+$small-width: 568px;
+$middle-width: 768px;
+$normal-width: 1300px;
+
+@mixin phone {
+  @media screen and (max-width: $small-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $middle-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: $normal-width) {
+    @content;
+  }
+}
+
+::-moz-selection {
+  background: $color;
+  color: $color-white;
+}
+
+::selection {
+  background: $color;
+  color: $color-white;
+}
+
+.ft-right {
+  text-align: right;
+}
+
+.layout {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+// header
+.m-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  padding: 10px 20px 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  @include desktop {
+    width: 30%;
+  }
+
+  @include tablet {
+    padding-bottom: 10px;
+    border: 0 none;
+  }
+
+  @include phone {
+    position: static;
+    width: 100%;
+    background: none !important;
+
+    .img {
+      display: none;
+    }
+  }
+
+  .site-title {
+    position: relative;
+    z-index: 1;
+	  margin: 0 0 30px;
+    font-size: 26px;
+    font-family:  'Josefin Sans',sans-serif;
+
+    @include tablet {
+      font-size: 22px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px;
+      position: relative;
+      z-index: 1;
+      background-image: linear-gradient(rgba($color-white, .4), rgba($color-white, 0));
+      color: #2d475a;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 50%;
+    margin-left: -45px;
+    bottom: -10px;
+  }
+
+  .nav {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    font: 14px Karla, sans-serif;
+    text-transform: capitalize;
+
+    span {
+      padding: 0 15px;
+      color: $light;
+    }
+
+    span:last-child {
+      display: none;
+    }
+  }
+
+  .img {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+    color: rgba(#7ea6B8, .16);
+  }
+}
+
+// bottom
+.m-sidebar {
+  padding: 30px 0 60px;
+  text-align: left;
+
+  .avatar {
+    height: 60px;
+    width: 60px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .tag-item {
+    padding: 0 10px;
+    margin-right: 10px;
+    line-height: 30px;
+    display: inline-block;
+    color: $gray;
+    font-family: karla, sans-serif;
+    border-radius: 4px;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color;
+    }
+  }
+}
+
+.my_socials {
+  display: inline-block;
+  font-size: 13px;
+
+  a {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+
+.search-form {
+  margin: 10px 40px 20px 0;
+  position: relative;
+  max-width: 300px;
+
+  .input {
+    padding: 0 10px 0 40px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0 none;
+    height: 40px;
+    display: block;
+    border-radius: 4px;
+    font-size: 14px;
+    background: $color-bg;
+
+    &:focus {
+      outline: none;
+      border-color: $color;
+    }
+  }
+
+  button {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    border: 0;
+
+    .fa {
+      color: $gray;
+    }
+  }
+}
+
+// main
+.m-main {
+  padding-left: 40%;
+
+  @include desktop {
+    padding-left: 30%;
+  }
+
+  @include phone {
+    padding-left: 0;
+  }
+}
+
+.content {
+  padding: 20px 60px;
+  margin: 0 auto;
+  max-width: $max-width;
+
+  @include tablet {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.doc_comments {
+  margin: 0;
+  padding: 20px;
+}
+
+.doc_comments #new_comment_form .input_body {
+  box-sizing: content-box;
+}
+
+// article
+.post_head {
+  padding: 0 20px 40px;
+  text-align: center;
+
+  .h1 {
+    text-transform: capitalize;
+    font-size: 30px;
+
+    @include tablet {
+      font-size: 26px;
+    }
+  }
+
+  .date {
+    color: $color-content;
+    text-transform: capitalize;
+	  font-family: Karla, sans-serif;
+  }
+}
+
+.post_tags {
+  margin-bottom: 40px;
+
+  .btn {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 4px;
+    background: $color-bg;
+  }
+}
+
+.post {
+  padding-top: 20px;
+  margin-bottom: 60px;
+
+  @include desktop {
+    margin-bottom: 40px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  // post list
+  &_title {
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 26px;
+    font-weight: 400;
+
+    @include desktop {
+      font-size: 22px;
+    }
+  }
+
+  &_cover {
+    height: 300px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &_content {
+    padding-bottom: 20px;
+  }
+
+  &_info {
+	  font: 13px Karla, sans-serif;
+
+    .info {
+      color: #b1b3b5;
+    }
+
+    .date {
+      margin-right: 15px;
+    }
+
+    a {
+      color: $color;
+      margin-right: 15px;
+
+      &:hover {
+        color: $color;
+      }
+    }
+  }
+}
+
+.post-list {
+  .p_part,
+  .p_part p {
+    display: inline;
+  }
+
+  .post_content.markdown {
+    font-size: 14px;
+  } 
+}
+
+.paginator {
+  margin: 30px 0 20px;
+  padding: 20px 0;
+  font-size: 13px;
+  font-family: Karla, sans-serif;
+  border: 1px solid $color-bg {
+    left: 0;
+    right: 0;
+  };
+  text-align: center;
+
+  .pre {
+    float: left;
+  }
+
+  .next {
+    float: right;
+  }
+}
+
+// footer
+.footer {
+  padding: 30px 0;
+  font-size: 12px;
+  font-family: Karla, sans-serif;
+}
+
+.bitcron_nav {
+  li {
+    display: inline-block;
+
+    + li:before {
+      content: '/';
+      margin-right: 6px;
+    }
+  }
+}
+
+// archive list
+.list_with_title {
+  .listing_title {
+    font-size: 24px;
+    color: #666;
+    font-weight: bold;
+    padding-top: 10px;
+    line-height: 2.2;
+    margin-bottom: 10px;
+  }
+
+  .listing {
+    margin: 0 0 50px 0;
+    padding: 0;
+    font-size: 16px;
+
+    .listing_post {
+      padding-bottom: 15px;
+
+      .post_date {
+        float: right;
+        font-size: 14px;
+        color: #c5c5c5;
+      }
+    }
+  }
+}

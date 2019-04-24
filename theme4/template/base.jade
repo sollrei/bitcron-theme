@@ -1,0 +1,61 @@
+html
+    +h.i18n('Home', '首页', 'zh_cn')
+    +h.i18n('Categories', '分类', 'zh_cn')
+    +h.i18n('Archive', '归档', 'zh_cn')
+    +h.i18n('Tags', '标签', 'zh_cn')
+    +h.i18n('About', '关于', 'zh_cn')
+    +h.i18n('Links', '友链', 'zh_cn')
+	link(href='https://fonts.googleapis.com/css?family=Josefin+Sans|Karla',rel='stylesheet')
+    head
+        +h.headers
+        block title
+            title= post.title or site.title
+        +h.load('markdown')
+        +h.load('/template/reset.scss')
+        +h.load('/template/style.scss')
+        +h.load('/template/post.scss')
+    body
+        .m-header(style="background-image: url({{site.background_image}})")
+            h1.site-title
+                a(href="/?status=loaded") {{ site.title }}
+                svg(viewBox="0 0 185 94",xmlns="http://www.w3.org/2000/svg",fill-rule="evenodd",clip-rule="evenodd",stroke-linejoin="round",stroke-miterlimit="1.414",width="80")
+                    path(d="M74.394 54.433s15.323-2.015 23.026 9.752c7.704 11.767 11.815 15.144 13.017 16.011 1.202.867-27.307-.577-36.043-25.763z",fill="#517791")
+                    path(d="M39.392 46.534s16.23 5.418 18.197 20.864c1.968 15.447 4.424 20.801 5.2 22.247.776 1.445-26.904-13.807-23.397-43.111z",fill="#2d475a")
+                    path(d="M113.701 48.408s15.576-5.893 26.56 4.55c10.984 10.443 16.129 12.972 17.604 13.585 1.475.613-28.788 6.13-44.164-18.135z",fill="#7ea6b8")
+                    path(d="M36.483 41.551s16.304 6.979 28.466-3.632C77.11 27.307 82.7 24.851 84.297 24.266c1.597-.586-30.35-7.833-47.814 17.285zM81.824 51.306s13.794.419 19.585-10.724c5.792-11.144 9.142-14.512 10.132-15.39.991-.878-24.209 2.956-29.717 26.114zM119.334 44.153s12.351-4.257 13.738-16.065c1.388-11.808 3.223-15.914 3.805-17.024.583-1.109-20.439 10.741-17.543 33.089z",fill="#c0d2db")
+                    path(d="M142.938 36.47s16.832 1.635 24.819-11.52c7.988-13.154 12.358-17 13.64-17.993 1.283-.993-29.841 1.646-38.459 29.513z",fill="#a9c2c8")
+            nav.nav
+                for category in  posts.categories
+                    a(href=category.url)= category.title
+                    span /
+        .m-main      
+            .content
+                block content
+                footer.footer
+                    .m-sidebar
+                        +pure
+                            +pure(1, 0.4, 0.4, 0.4)
+                                .avatar
+                                    img(src="{{site.avatar}}",height="60",width="60")
+                                .name
+                                    span @
+                                    span= site.configs.author or site.configs.admin_name
+                                .desc= site.configs.sub_title
+                                .footer-nav= site.just_nav
+                            +pure(1, 0.6, 0.6, 0.6)
+                                form.search-form(action='')
+                                    input.input(type='search', name='s')
+                                    button(type='submit')
+                                        i.fa.fa-search
+                                .side-tags
+                                    for tag_name, tag_count in site.tags
+                                        a.tag-item(role="tags",href="/tags/{{ tag_name }}")= tag_name
+                    +pure
+                        +pure(1, 0.5, 0.5, 0.5)
+                            p Designed by Sollrei
+                            p
+                                a(href="https://bitcron.com/?s=f", target="_blank") Proudly published with Bitcron！
+                        +pure(1, 0.5, 0.5, 0.5)
+                            .ft-right
+                                +site.socials
+        +h.load('font')
