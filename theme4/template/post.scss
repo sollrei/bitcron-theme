@@ -21,6 +21,14 @@ $color-text: #333;
     margin-bottom: 20px;
   }
 
+  kbd {
+    padding: 0 6px;
+    margin: 0 4px;
+    border: 0 none;
+    box-shadow: none;
+    text-shadow: none;
+  }
+
   span.md_line {
     line-height: 2;
   }
@@ -154,6 +162,11 @@ $color-text: #333;
   content: 'scss';
 }
 
+.code_lang_shell pre:before {
+  content: 'shell';
+}
+
+.code_lang_shell,
 .code_lang_scss,
 .code_lang_css,
 .code_lang_html,
